@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Lista de clientes</title>
+        <!--Script CSS-->
+        <link rel="stylesheet" href="css\bootstrap.min.css">
+        <link rel="stylesheet" href="css\listaCliente.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="index.html">Panetteria</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>      
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Cliente
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item active" href="">Lista de Clientes</a>
+                                    <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="cadastroCliente.html">Cadastro de Clientes</a>
+                                    </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Produto
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Lista de Produtos</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Cadastro de Produtos</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <main class="mt-5 pt-2 col-lg-12">
+                <!-- -->
+                <div class="row justify-content-between mt-4">
+                    <div class="col-lg-4">
+                        <h1 class="text-dark">lista de clientes</h1>
+                    </div>
+                    <div class="col-lg-4 pt-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Procurar pelo cliente..." aria-label="Procurar pelo cliente...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-outline-success" type="button" id="teste">Procurar!</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive mt-5" style="margin: auto; width: 70%">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">nome</th>
+                                <th scope="col">sobrenome</th>
+                                <th scope="col">telefone</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientes">
+                        </tbody>
+                    </table>
+                </div>
+                <!-- -->
+            </main>
+        </div>
+        <div>
+            <nav id="footer" class="navbar fixed-bottom bg-primary"></nav>
+        </div>
+        <!--Script JS-->
+        <script src="js\jquery-slim.min.js"></script>
+        <script src="js\popper.min.js">     </script>
+        <script src="js\bootstrap.min.js">  </script>
+        <script src="js\listaCliente.js">   </script>
+    </body>
+</html>
