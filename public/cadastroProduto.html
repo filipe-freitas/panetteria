@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Cadastro de produtos</title>
+        <!--Script CSS-->
+        <link rel="stylesheet" href="css\bootstrap.min.css">
+        <link rel="stylesheet" href="css\cadastroProduto.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="index.html">Panetteria</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>      
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastroPedido.html">
+                                    Pedido
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Cliente
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="listaCliente.html">Lista de Clientes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="cadastroCliente.html">Cadastro de Clientes</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Produto
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="listaProduto.html">Lista de Produtos</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item active" href="">Cadastro de Produtos</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <main class="mt-5 pt-2">
+                <h1 class="text-dark mt-4" id="tituloPagina">cadastro de produto</h1>
+                <small class="text-muted" id="produto"></small>
+                <form id="form" action="panetteria.addProduct" method="POST" role="form" class="mt-4 pt-2">
+                    <div class="form-row col-lg-12 justify-content-center">
+                        <div class="col-md-3 col-lg-2">
+                            <label for="categoriaProduto" class="ml-2">categoria</label>
+                            <input id="categoriaProduto" name="categoria" class="form-control mb-3 text-center" type="text" placeholder="grão">
+                        </div>
+                        <div class="col-md-5 col-lg-3">
+                            <label for="tipoProduto" class="ml-2">tipo</label>
+                            <input id="tipoProduto" name="tipo" class="form-control mb-3 text-center" type="text" placeholder="arroz">
+                        </div>
+                    </div>
+                    <div class="form-row col-lg-12 justify-content-center">
+                        <div class="col-md-4 col-lg-5">
+                            <label for="marcaProduto" class="ml-2">marca</label>
+                            <input id="marcaProduto" name="marca" class="form-control mb-3 text-center" type="text" placeholder="prato fino">
+                        </div>
+                    </div>
+                    <div class="form-row col-lg-12 justify-content-center">
+                        <div class="col-md-4 col-lg-5">
+                            <label for="descricaoProduto" class="ml-2">descrição</label>
+                            <input id="descricaoProduto" name="descricao" class="form-control mb-3 text-center" type="text" placeholder="agulinha tipo 1">
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12 col-lg-12 justify-content-center">
+                        <div class="col-md-4 col-lg-1">
+                            <label for="pesoProduto" class="ml-2">peso</label>
+                            <input id="pesoProduto" name="peso" class="form-control mb-3 text-center" type="text" placeholder="5kg">
+                        </div>
+                        <div class="col-md-4 col-lg-2">
+                                <label for="precoProduto" class="ml-2">preço</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="height: 38px">R$</span>
+                                    <input id="precoProduto" name="preco" class="form-control mb-3 text-center" type="text" placeholder="1,99">
+                                </div>
+                        </div> 
+                    </div>
+                    <div class="row justify-content-end col-12 col-sm-11 col-md-11 col-lg-9 col-xs-5">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-danger pr-4 pl-4" id="excluirProduto" type="submit">excluir</button>
+                        </div>
+                        <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xs-auto">
+                            <button class="btn btn-outline-primary pr-4 pl-4" id="cadastrarProduto" type="submit" onclick="cadastrar()">cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </main>
+            <!-- Modal para validar ações da tela -->
+            <div class="modal fade" id="validacaoModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-title"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modal-message"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="" id="botaoModal">Sim</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5">
+            <nav id="footer" class="navbar fixed-bottom bg-primary">
+            </nav>
+        </div>
+        <!--Script JS-->
+        <script src="js\jquery-slim.min.js"></script>
+        <script src="js\popper.min.js">     </script>
+        <script src="js\bootstrap.min.js">  </script>
+        <script src="js\cadastroProduto.js"></script>
+    </body>
+</html>

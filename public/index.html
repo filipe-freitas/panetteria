@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Panetteria</title>
+        <link rel="shortcut icon" href="img/donuts.png">
         <!--Script CSS-->
         <link rel="stylesheet" href="css\bootstrap.min.css">
         <link rel="stylesheet" href="css\index.css">
@@ -17,6 +18,11 @@
                     </button>      
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastroPedido.html">
+                                    Pedido
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Cliente
@@ -24,17 +30,17 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="listaCliente.html">Lista de Clientes</a>
                                     <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="cadastroCliente.html">Cadastro de Clientes</a>
-                                    </div>
+                                    <a class="dropdown-item" href="cadastroCliente.html">Cadastro de Clientes</a>
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Produto
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Lista de Produtos</a>
+                                    <a class="dropdown-item" href="listaProduto.html">Lista de Produtos</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Cadastro de Produtos</a>
+                                    <a class="dropdown-item" href="cadastroProduto.html">Cadastro de Produtos</a>
                                 </div>
                             </li>
                         </ul>
@@ -42,6 +48,12 @@
                 </nav>
             </div>
             <main class="mt-5 pt-2 col-lg-12">
+                <div class="jumbotron">
+                    <h1 class="display-4">Olá! Somos a Panetteria..</h1>
+                    <p class="lead">A melhor padaria de todo o universo e as galáxias!</p>
+                    <hr class="my-4">
+                    <p>Ceje bem-vindo e esprimente a nossa linguiça</p>
+                </div>
             </main>
         </div>
         <div>
@@ -51,6 +63,5 @@
         <script src="js\jquery-slim.min.js"></script>
         <script src="js\popper.min.js">     </script>
         <script src="js\bootstrap.min.js">  </script>
-        <script src="js\index.js">          </script>
     </body>
 </html>

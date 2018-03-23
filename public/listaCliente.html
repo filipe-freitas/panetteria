@@ -14,9 +14,14 @@
                     <a class="navbar-brand" href="index.html">Panetteria</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                    </button>      
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastroPedido.html">
+                                    Pedido
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Cliente
@@ -24,17 +29,17 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item active" href="">Lista de Clientes</a>
                                     <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="cadastroCliente.html">Cadastro de Clientes</a>
-                                    </div>
+                                    <a class="dropdown-item" href="cadastroCliente.html">Cadastro de Clientes</a>
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Produto
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Lista de Produtos</a>
+                                    <a class="dropdown-item" href="listaProduto.html">Lista de Produtos</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Cadastro de Produtos</a>
+                                    <a class="dropdown-item" href="cadastroProduto.html">Cadastro de Produtos</a>
                                 </div>
                             </li>
                         </ul>
@@ -49,10 +54,17 @@
                     </div>
                     <div class="col-lg-4 pt-2">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Procurar pelo cliente..." aria-label="Procurar pelo cliente...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-outline-success" type="button" id="teste">Procurar!</button>
-                            </span>
+                            <input type="text" class="form-control" id="pesquisa" name="pesquisa" placeholder="Procurar cliente..." aria-label="Procurar pelo cliente...">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-outline-primary" id="byName">por nome</button>
+                                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">por CPF</a>
+                                    <a class="dropdown-item" href="#">por telefone</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -70,7 +82,6 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- -->
             </main>
         </div>
         <div>

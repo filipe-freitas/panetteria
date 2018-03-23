@@ -17,6 +17,11 @@
                     </button>      
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="cadastroPedido.html">
+                                    Pedido
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Cliente
@@ -24,81 +29,104 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="listaCliente.html">Lista de Clientes</a>
                                     <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item active" href="">Cadastro de Clientes</a>
-                                    </div>
+                                    <a class="dropdown-item active" href="">Cadastro de Clientes</a>
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Produto
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Lista de Produtos</a>
+                                    <a class="dropdown-item" href="listaProduto.html">Lista de Produtos</a>
                                     <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Cadastro de Produtos</a>
-                                    </div>
+                                    <a class="dropdown-item" href="cadastroProduto.html">Cadastro de Produtos</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </div>
             <main class="mt-5 pt-2">
-                <h1 class="text-dark mt-4">cadastro de clientes</h1>
-                <form>
+                <h1 class="text-dark mt-4" id="tituloPagina">cadastro de cliente</h1>
+                <small class="text-muted" id="cliente"></small>
+                <form id="form" action="panetteria.addCustomer" method="POST" role="form" class="mt-4 pt-2">
                     <div class="form-row col-lg-12 justify-content-center">
-                        <div class="col-lg-2 col-xs-5">
-                            <label for="nomeCliente">nome</label>
-                            <input id="nomeCliente" class="form-control mb-3 text-center" type="text" placeholder="john">
+                        <div class="col-md-3 col-lg-2">
+                            <label for="nomeCliente" class="ml-2">nome</label>
+                            <input id="nomeCliente" name="nome" class="form-control mb-3 text-center" type="text" placeholder="john">
                         </div>
-                        <div class="col-lg-3 col-xs-5">
-                            <label for="sobrenomeCliente">sobrenome</label>
-                            <input id="sobrenomeCliente" class="form-control mb-3 text-center" type="text" placeholder="doe">
+                        <div class="col-md-5 col-lg-3">
+                            <label for="sobrenomeCliente" class="ml-2">sobrenome</label>
+                            <input id="sobrenomeCliente" name="sobrenome" class="form-control mb-3 text-center" type="text" placeholder="doe">
                         </div>
                     </div>
                     <div class="form-row col-lg-12 justify-content-center">
-                        <div class="col-lg-2 col-xs-4">
-                            <label for="telefoneCliente">telefone</label>
-                            <input id="telefoneCliente" class="form-control mb-3 text-center" type="text" placeholder="0 55 00 12345-6789">
+                        <div class="col-md-4 col-lg-3">
+                            <label for="telefoneCliente" class="ml-2">telefone</label>
+                            <input id="telefoneCliente" name="telefone" class="form-control mb-3 text-center" type="text" placeholder="+55 00 12345-6789">
                         </div>
-                        <div class="col-lg-2 col-xs-4">
-                            <label for="cpfCliente">cpf</label>
-                            <input id="cpfCliente" class="form-control mb-3 text-center" type="text" placeholder="111.222.333-44">
+                        <div class="col-md-4 col-lg-2">
+                            <label for="cpfCliente" class="ml-2">cpf</label>
+                            <input id="cpfCliente" name="cpf" class="form-control mb-3 text-center" type="text" placeholder="123.456.789-10">
+                        </div>
+                    </div>
+
+                    <div class="form-row col-lg-12 justify-content-center pt-3">
+                        <div class="col-md-3 col-lg-2">
+                            <label for="cepCliente" class="ml-2">cep</label>
+                            <input id="cepCliente" name="cep" class="form-control mb-3 text-center" type="text" placeholder="12345-678">
+                        </div>
+                        <div class="col-md-1 col-lg-1">
+                            <label for="estadoCliente" class="ml-2">estado</label>
+                            <input id="estadoCliente" name="estado" class="form-control mb-3 text-center" type="text">
+                        </div>
+                        <div class="col-md-5 col-lg-3">
+                            <label for="cidadeCliente" class="ml-2">cidade</label>
+                            <input id="cidadeCliente" name="cidade" class="form-control mb-3 text-center" type="text">
                         </div>
                     </div>
                     <div class="form-row col-lg-12 justify-content-center">
-                        <div class="col-lg-2 col-xs-3">
-                            <label for="cepCliente">cep</label>
-                            <input id="cepCliente" class="form-control mb-3 text-center" type="text" placeholder="12345-678">
+                        <div class="col-md-7 col-lg-5">
+                            <label for="logradouroCliente" class="ml-2">logradouro</label>
+                            <input id="logradouroCliente" name="logradouro" class="form-control mb-3 text-center" type="text">
+                        </div>
+                        <div class="col-md-2 col-lg-1">
+                            <label for="numLogradouroCliente" class="ml-2">número</label>
+                            <input id="numLogradouroCliente" name="numLogradouro" class="form-control mb-3 text-center" type="text">
                         </div>
                     </div>
-                    <div class="form-row col-lg-12 justify-content-center">
-                        <div class="col-lg-2 col-xs-3">
-                            <label for="estadoCliente">estado</label>
-                            <input id="estadoCliente" class="form-control mb-3" type="text">
+                    <div class="row justify-content-end col-sm-11 col-md-11 col-lg-9 col-xs-5">
+                        <div class="col-auto">
+                            <button class="btn btn-outline-danger pr-4 pl-4" id="excluirCliente" type="submit">excluir</button>
                         </div>
-                        <div class="col-lg-4">
-                            <label for="cidadeCliente">cidade</label>
-                            <input id="cidadeCliente" class="form-control mb-3 text-center" type="text">
-                        </div>
-                    </div>
-                    <div class="form-row col-lg-12 justify-content-center">
-                        <div class="col-lg-5">
-                            <label for="logradouroCliente">logradouro</label>
-                            <input id="logradouroCliente" class="form-control mb-3 text-center" type="text">
-                        </div>
-                        <div class="col-lg-1">
-                            <label for="numeroCliente">número</label>
-                            <input id="numeroCliente" class="form-control mb-3 text-center" type="text">
+                        <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xs-auto">
+                            <button class="btn btn-outline-primary pr-4 pl-4" id="cadastrarCliente" type="submit" onclick="cadastrar()">cadastrar</button>
                         </div>
                     </div>
                 </form>
-                <div class="row justify-content-end col-12 col-sm-11 col-md-11 col-lg-9 col-xs-5">
-                    <div class="col-auto col-sm-auto col-md-auto col-lg-auto col-xs-auto">
-                        <button class="btn btn-outline-primary pr-4 pl-4" type="submit" onclick="cadastrar()">cadastrar</button>
+            </main>
+            <!-- Modal para validar ações da tela -->
+            <div class="modal fade" id="validacaoModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-title"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="modal-message"></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="" id="botaoModal">Sim</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+                        </div>
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
-        <div>
+        <div class="mt-5">
             <nav id="footer" class="navbar fixed-bottom bg-primary">
             </nav>
         </div>
@@ -108,3 +136,4 @@
         <script src="js\bootstrap.min.js">  </script>
         <script src="js\cadastroCliente.js"></script>
     </body>
+</html>
