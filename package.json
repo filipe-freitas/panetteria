@@ -12,7 +12,8 @@
     "consign": "^0.1.6",
     "express": "^4.17.1",
     "method-override": "^2.3.10",
-    "mongodb": "^3.3.3",
-    "mongoose": "^5.7.5"
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.12",
+    "mysql": "^2.17.1"
   }
 }
